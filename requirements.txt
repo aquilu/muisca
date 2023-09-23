@@ -6,6 +6,6 @@ openai
 cohere
 PyPDF2
 langchain
-pymupdf
 tiktoken
 faiss-cpu
+PyMuPDF

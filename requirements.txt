@@ -1,11 +1,10 @@
 streamlit
 python-dotenv
 transformers
-fitz
+PyMuPDF
 openai
 cohere
 PyPDF2
 langchain
 tiktoken
 faiss-cpu
-PyMuPDF

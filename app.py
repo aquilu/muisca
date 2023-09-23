@@ -5,13 +5,11 @@ from datetime import datetime, timedelta
 import textwrap
 
 import cohere
-#import fitz  # PyMuPDF
-import PyMuPDF as fitz
-import fitz
+import fitz  # PyMuPDF
 import openai
 import streamlit as st
 from transformers import pipeline
-import install PyPDF2
+import PyPDF2
 
 # Importaciones específicas del primer código
 from PyPDF2 import PdfReader
@@ -22,6 +20,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
 from htmlTemplates import css, bot_template, user_template
+
 
 # Solicitar al usuario las claves API
 COHERE_API_KEY = st.sidebar.text_input("Introduce tu clave API de Cohere", type="password")

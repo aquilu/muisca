@@ -5,7 +5,8 @@ from datetime import datetime, timedelta
 import textwrap
 
 import cohere
-import fitz  # PyMuPDF
+#import fitz  # PyMuPDF
+import PyMuPDF as fitz
 import openai
 import streamlit as st
 from transformers import pipeline

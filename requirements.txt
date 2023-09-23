@@ -1,0 +1,11 @@
+streamlit
+python-dotenv
+transformers
+fitz
+openai
+cohere
+PyPDF2
+langchain
+pymupdf
+tiktoken
+faiss-cpu

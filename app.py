@@ -22,17 +22,12 @@ from langchain.vectorstores import FAISS
 from htmlTemplates import css, bot_template, user_template
 
 
-# Solicitar al usuario las claves API
-COHERE_API_KEY = st.sidebar.text_input("Introduce tu clave API de Cohere", type="password")
-OPENAI_API_KEY = st.sidebar.text_input("Introduce tu clave API de OpenAI", type="password")
+# Accede a las claves API usando st.secrets
+COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-# Inicializa el cliente de Cohere (si se proporciona la clave)
-if COHERE_API_KEY:
-    co = cohere.Client(COHERE_API_KEY)
-
-# Configuración de la clave API de OpenAI (si se proporciona la clave)
-if OPENAI_API_KEY:
-    openai.api_key = OPENAI_API_KEY
+# Inicializa el cliente de Cohere con la clave proporcionada
+co = cohere.Client(COHERE_API_KEY)
 
 # Otras configuraciones iniciales
 API_CALLS_LIMIT = 5

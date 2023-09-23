@@ -7,9 +7,11 @@ import textwrap
 import cohere
 #import fitz  # PyMuPDF
 import PyMuPDF as fitz
+import fitz
 import openai
 import streamlit as st
 from transformers import pipeline
+import install PyPDF2
 
 # Importaciones específicas del primer código
 from PyPDF2 import PdfReader

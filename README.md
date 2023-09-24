@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Muisca
 
 ![Banner](https://d1b4gd4m8561gs.cloudfront.net/sites/default/files/inline-images/brc-principal_1.png)
@@ -40,7 +39,3 @@ Las contribuciones son bienvenidas. Por favor, abre un issue para discutir lo qu
 ## Contacto
 
 Para más información o consultas, por favor, contacta a [halbarba@vasmi.co].
-=======
-# muisca
-Muisca: Modelo Unificado de Inteligencia Supervisada para la Computación y Aplicación. Una herramienta Streamlit para resumir y hacer preguntas sobre documentos en PDF y TXT utilizando modelos de lenguaje de última generación.
->>>>>>> 780fb927069160b4aa231c5e73ad646ae6896a4b

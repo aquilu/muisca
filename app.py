@@ -22,12 +22,14 @@ from langchain.vectorstores import FAISS
 from htmlTemplates import css, bot_template, user_template
 
 
-# Accede a las claves API usando st.secrets
-COHERE_API_KEY = st.secrets["COHERE_API_KEY"]
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+# Obtener la clave API de OpenAI desde una variable de entorno
+openai_api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = openai_api_key
 
-# Inicializa el cliente de Cohere con la clave proporcionada
-co = cohere.Client(COHERE_API_KEY)
+# Obtener la clave API de Cohere desde una variable de entorno
+cohere_api_key = os.environ.get("COHERE_API_KEY")
+co = cohere.Client(cohere_api_key)
+
 
 # Otras configuraciones iniciales
 API_CALLS_LIMIT = 5
@@ -71,15 +73,16 @@ def filtrar_por_palabras_clave(texto, keywords):
 def generar_resumen_openai(texto):
     try:
         response = openai.ChatCompletion.create(
-          model="gpt-3.5-turbo",
-          messages=[{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": texto}],
-          temperature=0,
-          max_tokens=1024
+            model="gpt-3.5-turbo",
+            messages=[{"role": "system", "content": "You are a helpful assistant."},
+                      {"role": "user", "content": texto}]
         )
-        return response.choices[0].message['content']
+        # La respuesta se encuentra en el último mensaje generado por el modelo
+        return response['choices'][0]['message']['content']
     except Exception as e:
         st.error(f"Error: {str(e)}")
         return None
+
 
 def generar_resumen(co, texto):
     global api_calls
